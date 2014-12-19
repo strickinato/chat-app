@@ -14,7 +14,9 @@ $(function() {
 
 var addChatToHTML = function(data) {
   $("#chat-input-field").val("")
-  $("#chat-output").text(data.message + "\n")
+  var outputPlace = $("#chat-output")
+  $(document.createTextNode(data.message)).appendTo(outputPlace)
+  outputPlace.append("<br>")
 }
 
 var submitChatMessage = function(socket) {
