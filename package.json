@@ -1,0 +1,16 @@
+{
+  "name": "nodeApp",
+  "version": "0.0.0",
+  "description": "A chat application built on Node.JS built by Aaron Strick to learn Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Strick",
+  "license": "ISC",
+  "dependencies" : {
+    "socket.io":"1.0.x",
+    "mime":"~1.2.7",
+    "node-static":"^0.7.4"
+  }
+}
