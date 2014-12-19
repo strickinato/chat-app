@@ -6,7 +6,7 @@
   }
 
   Chat.prototype.sendMessage = function(message) {
-    this.socket.emit("message", {message: message})
+    this.socket.emit("message", message);
   }
 
 })(window);
