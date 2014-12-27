@@ -1,3 +1,4 @@
+path = require('path');
 express = require('express');
 var router = express.Router();
 
@@ -7,8 +8,8 @@ router.use(function(req, res, next) {
   next();
 });
 
-router.get("/", function(req, res) {
-    res.send("hello")
+router.get('/', function(req, res) {
+    res.sendFile(path.resolve(__dirname, '../public/index.html'))
 });
 
 module.exports = router;
