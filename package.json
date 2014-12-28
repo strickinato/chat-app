@@ -1,10 +1,10 @@
 {
   "name": "nodeApp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A chat application built on Node.JS built by Aaron Strick to learn Node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node lib/app.js"
   },
   "author": "Aaron Strick",
   "license": "ISC",
@@ -21,5 +21,10 @@
     "sequelize-cli": "^1.0.1",
     "socket.io": "1.0.x",
     "socket.io-sequelize": "^1.0.1"
+  }
+},
+"engines": {
+  "node": "0.8.x",
+  "npm": "1.1.x"
   }
 }
