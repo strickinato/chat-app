@@ -3,7 +3,6 @@ var express = require('express');
 var router  = express.Router();
 
 router.post('/', function(req, res) {
-  //console.log(req.param('body'));
   models.Message.create({
     body: req.param('body')
   }).then(function() {
