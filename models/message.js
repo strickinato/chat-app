@@ -1,8 +1,7 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-
-  var Message = sequelize.define('Message', {
+  return sequelize.define("Message", {
     body: DataTypes.STRING,
     aaron: {
       type: DataTypes.BOOLEAN,
@@ -10,6 +9,4 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-
-  return Message;
 }

@@ -3,12 +3,12 @@ $(function() {
 
   $("#chat-input").on("submit", function(e){
     e.preventDefault();
-    submitChatMessage(socket)
+    submitChatMessage(socket);
   });
 
   socket.on('message', function(data){
-    addChatToHTML(data)
-  })
+    addChatToHTML(data);
+  });
 
 });
 
