@@ -1,6 +1,8 @@
-path = require('path');
-express = require('express');
+var models = require('../models')
+var path = require('path');
+var express = require('express');
 var router = express.Router();
+
 
 // route middleware that will happen on every request
 router.use(function(req, res, next) {
@@ -9,7 +11,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-    res.sendFile(path.resolve(__dirname, '../public/index.html'))
+  res.render('index', { title: 'The index page!' })
 });
 
 module.exports = router;
