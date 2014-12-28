@@ -11,7 +11,12 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'The index page!' })
-});
+  models.Message.findAll().then(function(messages) {
+    res.render('index', {
+      title: 'Express',
+      messages: messages
+    });
+  });
+}); 
 
 module.exports = router;
