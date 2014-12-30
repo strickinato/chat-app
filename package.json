@@ -20,6 +20,7 @@
     "sequelize": "^2.0.0-rc4",
     "sequelize-cli": "^1.0.1",
     "socket.io": "1.0.x",
-    "socket.io-sequelize": "^1.0.1"
+    "socket.io-sequelize": "^1.0.1",
+    "twilio": "^1.10.0"
   }
 }
