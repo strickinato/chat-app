@@ -8,7 +8,7 @@ var router = express.Router();
 router.use(function(req, res, next) {
   console.log(req.method, req.url);
   console.log("req.params" + req.body.From)
-  console.log("req.param('From')" requ.param('From'))
+  console.log("req.param('From')" + req.param('From'))
   next();
 });
 
