@@ -2,8 +2,10 @@ var express = require('express');
 var twilio = require('twilio');
 var router  = express.Router();
 
-router.post('/', twilio.webhook(), function(req, res) {
+router.post('/', function(req, res) {
   // Create a TwiML res
+
+  
   var twiml = new twilio.TwimlResponse();
   twiml.message('Hello from node.js!');
 
