@@ -1,6 +1,5 @@
 $(function() {
   var socket = io();
-  //var models = require('./models')
 
   $("#chat-input").on("submit", function(e){
     e.preventDefault();
