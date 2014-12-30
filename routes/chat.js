@@ -7,8 +7,8 @@ var router = express.Router();
 // route middleware that will happen on every request
 router.use(function(req, res, next) {
   console.log(req.method, req.url);
-  console.log("req.params" + req.body.From)
-  console.log("req.param('From')" + req.param('From'))
+  console.log("req.body" + req.body)
+  console.log("req.params" + req.params)
   next();
 });
 
