@@ -1,5 +1,5 @@
 var express = require('express');
-var models = require('models')
+var models = require('../models')
 var twilio = require('twilio');
 var router  = express.Router();
 var AARON = '+14152720970'
