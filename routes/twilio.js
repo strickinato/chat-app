@@ -10,7 +10,7 @@ router.post('/', function(req, res) {
       body: req.param('Body'),
       aaron: true
     }).then(function(message) {
-      message.emit('message', message.body)
+      emit('message', message.body)
       // var twiml = new twilio.TwimlResponse();
       // twiml.message('Hello from node.js!');
       // res.type('text/xml');
