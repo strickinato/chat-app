@@ -1,4 +1,6 @@
-if (!global.hasOwnProperty('db')) {
+"use strict";
+
+//if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
   , sequelize = null
 
@@ -18,30 +20,26 @@ if (!global.hasOwnProperty('db')) {
     var config    = require(__dirname + '/../config/config.json')[env];
     sequelize = new Sequelize(config.database, config.username, config.password, config);
   }
-}
+//}
 
-    var fs        = require("fs");
-    var path      = require("path");
-    var basename  = path.basename(module.filename);
+  var fs        = require("fs");
+  var path      = require("path");
+  var basename  = path.basename(module.filename);
 
-    global.db = {};
+  var db = {};
 
 
-    fs
+  fs
     .readdirSync(__dirname)
     .filter(function(file) {
       return (file.indexOf(".") !== 0) && (file !== basename);
     })
     .forEach(function(file) {
       var model = sequelize["import"](path.join(__dirname, file));
-      global.db[model.name] = model;
+      db[model.name] = model;
     });
 
 
-    global.db = {
-      Sequelize: Sequelize,
-      sequelize: sequelize
-    }
-    console.log(global.db.sequelize.models)
-
-module.exports = global.db
+  db.Sequelize = Sequelize;
+  db.sequelize = sequelize;
+  module.exports = db
