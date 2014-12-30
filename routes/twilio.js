@@ -4,13 +4,19 @@ var router  = express.Router();
 var AARON = '+14152720970'
 
 router.post('/', function(req, res) {
-  if(req.body.From == AARON) {
-    var twiml = new twilio.TwimlResponse();
-    twiml.message('Hello from node.js!');
+  if(req.param('From') == AARON) {
+    models.Message.create({
+      body: req.param('body'),
+      aaron: true
+    }).then(function() {
+      var twiml = new twilio.TwimlResponse();
+      twiml.message('Hello from node.js!');
+      res.type('text/xml');
+      res.send(twiml.toString());
+      res.redirect('/');
+    });
 
-    // Render the TwiML res as XML
-    res.type('text/xml');
-    res.send(twiml.toString());
+
   }
 
 });
