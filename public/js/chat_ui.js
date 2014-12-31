@@ -2,19 +2,17 @@ $(function() {
   var socket = io();
 
   $("#chat-input").on("submit", function(e){
-    e.preventDefault();
     submitChatMessage(socket);
   });
 
   socket.on('message', function(data){
-    console.log(data)
     addChatToHTML(data);
   });
 
 });
 
 var addChatToHTML = function(data) {
-  $("#chat-input-field").val("")
+  $("#chat-input").val("")
   var outputPlace = $("#chat-output")
   $(document.createTextNode(data.body)).appendTo(outputPlace)
   outputPlace.append("<br>")
