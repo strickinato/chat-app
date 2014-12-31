@@ -2,7 +2,8 @@ $(function() {
   var socket = io();
 
   $("form#chat-input-form").on("submit", function(e){
-    submitChatMessage(socket);
+    e.preventDefault();
+    sendAjax(socket)
   });
 
   socket.on('message', function(data){
@@ -10,6 +11,21 @@ $(function() {
   });
 
 });
+
+var sendAjax = function(socket) {
+  $.ajax({
+    url: '/messages',
+    type: "POST",
+    data: {body: getText()},
+    success: function(response){
+      submitChatMessage(socket);
+    },
+    fail: function(error) {
+      console.log(error)
+    }
+  });
+}
+
 
 var addChatToHTML = function(data) {
   $("#chat-input").val("");

@@ -8,8 +8,8 @@ module.exports = function(io) {
       body: req.param('body')
     });
     newMessage.save().then(function() {
-      io.emit('message', newMessage)
-      res.redirect('back')
+      io.emit('message', newMessage);
+      res.send(newMessage);
     });
   }
 
