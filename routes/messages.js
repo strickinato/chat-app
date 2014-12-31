@@ -9,6 +9,7 @@ module.exports = function(io) {
     });
     newMessage.save().then(function() {
       io.emit('message', newMessage)
+      res.redirect('back')
     });
   }
 
