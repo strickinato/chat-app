@@ -13,8 +13,7 @@ $(function() {
 });
 
 var addChatToHTML = function(data) {
-  $("#chat-input-field").val("")
-  var outputPlace = $("#chat-output")
+  var outputPlace = $("#chat-input-field")
   $(document.createTextNode(data.message)).appendTo(outputPlace)
   outputPlace.append("<br>")
 }
