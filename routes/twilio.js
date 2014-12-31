@@ -1,8 +1,10 @@
-var models = require('../models')
-var AARON = '+14152720970'
+var models = require('../models');
+var express = require('express')
+var router = express.Router();
+var AARON = '+14152720970';
 
-module.exports = function(app, io) {
-  app.post('/', function(req, res) {
+module.exports = function(io) {
+  twilioRouter = function(req, res) {
     if(req.param('From') == AARON) {
       var newMessage = models.Message.build({
         body: req.param('Body'),
@@ -12,5 +14,6 @@ module.exports = function(app, io) {
         io.emit('message', newMessage.body)
       })
     }
-  })
+  }
+  return twilioRouter;
 }
