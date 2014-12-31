@@ -35,16 +35,14 @@ input[type=submit] {
   float:right;
   margin: 0;
 }
-li {
-  list-style: none;
-  margin: 3px;
-  border: solid 2px black;
-  border-radius: 5px;
-  
+p {
+  padding-left: 15px;
+  border-bottom: solid 1px gray;
+  width: 100%;
 }
 
 .from-user {
-  background-color: lime;
+  background-color: white;
   margin: 3px;
 }
 

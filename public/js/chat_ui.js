@@ -33,7 +33,7 @@ var addChatToHTML = function(data) {
     var message = document.createTextNode(data.body)
     var classType = data.aaron ? "from-aaron" : "from-user"
     $("#chat-output").prepend(
-      $("<li>").append(message).addClass(classType)
+      $("<p>").append(message).addClass(classType)
     );
   }
 }
