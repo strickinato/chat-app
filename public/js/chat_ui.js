@@ -1,7 +1,7 @@
 $(function() {
   var socket = io();
 
-  $("#chat-input").on("submit", function(e){
+  $("form#chat-input-form").on("submit", function(e){
     submitChatMessage(socket);
   });
 
@@ -27,5 +27,5 @@ var submitChatMessage = function(socket) {
 }
 
 var getText = function() {
-  return $("#chat-input-field").val()
+  return $("#chat-input").val()
 }

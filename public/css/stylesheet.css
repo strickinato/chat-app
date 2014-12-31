@@ -1,0 +1,37 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  overflow: hidden;
+}
+
+#form-container {
+  background-color: firebrick;
+  height: 50px;
+}
+span {
+  display: block;
+  overflow: hidden;
+}
+input[type=text] {
+  border:none;
+  height: 50px;
+  background-color: firebrick;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 15px;
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+}
+input[type=submit] {
+  background-color: red;
+  border: none;
+  height: 50px;
+  width: 100px;
+  float:right;
+  margin: 0;
+}
