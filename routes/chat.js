@@ -13,7 +13,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-  models.Message.findAll().then(function(messages) {
+  models.Message.findAll({ limit: 100, order: 'id DESC' }).then(function(messages) {
     res.render('index', {
       title: 'Express',
       messages: messages

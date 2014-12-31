@@ -15,7 +15,7 @@ var addChatToHTML = function(data) {
   $("#chat-input").val("");
   var message = document.createTextNode(data.body)
   var classType = data.aaron ? "from-aaron" : "from-user"
-  $("#chat-output").append(
+  $("#chat-output").prepend(
     $("<li>").append(message).addClass(classType)
   );
 }
