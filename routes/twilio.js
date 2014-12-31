@@ -11,6 +11,7 @@ module.exports = function(io) {
         body: newMessageText,
         aaron: true
       })
+      console.log(newMessageText)
       newMessage.save().then(function(error){
         io.emit('message', newMessageText);
         res.send(error.message);
