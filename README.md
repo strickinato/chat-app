@@ -7,5 +7,7 @@ T.T.A.S is built on Node.js with Express 4 and Socket.io and it plays with the T
 
 
 TODO::
++ Finish outbound alert system w/ Twilio
 + Add user nicknames
 + Opening Tour
++ favicon & other basic webpage stuff
