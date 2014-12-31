@@ -1,25 +1,17 @@
 var models  = require('../models');
-var express = require('express');
-var router  = express.Router();
 
+module.exports = function(io) {
+  var routes = {};
 
-router.post('/', function(req, res) {
-  models.Message.create({
-    body: req.param('body')
-  }).then(function() {
-    res.redirect('/');
-  });
-});
-
-router.get('/:message_id/destroy', function(req, res) {
-  models.Message.find({
-    where: {id: req.param('message_id')},
-  }).then(function(affectedRows) {
-    message.destroy().then(function() {
-      res.redirect('/');
+  routes.post = function(req, res) {
+    var newMessage = models.Message.build({
+      body: req.param('body')
     });
-  });
-});
+    newMessage.save().then(function() {
+      console.log(newMessage)
+      io.emit('message', newMessage)
+    }.bind(this));
+  }
 
-
-module.exports = router;
+  return routes;
+}
