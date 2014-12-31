@@ -9,16 +9,7 @@ router.post('/', function(req, res) {
     models.Message.create({
       body: req.param('Body'),
       aaron: true
-    }).then(function(message) {
-      emit('message', message.body)
-      // var twiml = new twilio.TwimlResponse();
-      // twiml.message('Hello from node.js!');
-      // res.type('text/xml');
-      // res.send(twiml.toString());
-      res.redirect('/');
-    });
-
-
+    }).emit('message', message.body)
   }
 
 });
