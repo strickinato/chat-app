@@ -10,8 +10,9 @@ module.exports = function(io) {
         body: req.param('Body'),
         aaron: true
       })
-      newMessage.save().then(function(){
+      newMessage.save().then(function(error){
         io.emit('message', newMessage.body)
+        res.send(error.message)
       })
     }
   }
