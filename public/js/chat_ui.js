@@ -12,10 +12,12 @@ $(function() {
 });
 
 var addChatToHTML = function(data) {
-  $("#chat-input").val("")
-  var outputPlace = $("#chat-output")
-  $(document.createTextNode(data.body)).appendTo(outputPlace)
-  outputPlace.append("<br>")
+  $("#chat-input").val("");
+  var message = document.createTextNode(data.body)
+  var classType = data.aaron ? "from-aaron" : "from-user"
+  $("#chat-output").append(
+    $("<li>").append(message).addClass(classType)
+  );
 }
 
 var submitChatMessage = function(socket) {
