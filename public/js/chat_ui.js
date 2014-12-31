@@ -28,12 +28,14 @@ var sendAjax = function(socket) {
 
 
 var addChatToHTML = function(data) {
-  $("#chat-input").val("");
-  var message = document.createTextNode(data.body)
-  var classType = data.aaron ? "from-aaron" : "from-user"
-  $("#chat-output").prepend(
-    $("<li>").append(message).addClass(classType)
-  );
+  if(data.aaron !== undefined) {
+    $("#chat-input").val("");
+    var message = document.createTextNode(data.body)
+    var classType = data.aaron ? "from-aaron" : "from-user"
+    $("#chat-output").prepend(
+      $("<li>").append(message).addClass(classType)
+    );
+  }
 }
 
 var submitChatMessage = function(socket) {
