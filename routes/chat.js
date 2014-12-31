@@ -6,9 +6,6 @@ var router = express.Router();
 
 // route middleware that will happen on every request
 router.use(function(req, res, next) {
-  console.log(req.method, req.url);
-  console.log("req.body" + req.body.body)
-  console.log("req.params" + req.param('Body'))
   next();
 });
 

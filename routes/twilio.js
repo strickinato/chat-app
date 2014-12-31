@@ -13,7 +13,6 @@ module.exports = function(io) {
       })
       newMessage.save().then(function(error){
         io.emit('message', newMessage);
-        res.send(error.message);
       })
     }
   }
