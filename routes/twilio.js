@@ -7,14 +7,12 @@ module.exports = function(io) {
 
   routes.post = function(req, res) {
     if(req.param('From') == AARON) {
-      var newMessageText = req.param('Body');
       var newMessage = models.Message.build({
-        body: newMessageText,
+        body: req.param('Body'),
         aaron: true
       })
-      console.log(newMessageText)
       newMessage.save().then(function(error){
-        io.emit('message', newMessageText);
+        io.emit('message', newMessage);
         res.send(error.message);
       })
     }
