@@ -6,10 +6,11 @@ var AARON = '+14152720970'
 
 router.post('/', function(req, res) {
   if(req.param('From') == AARON) {
-    models.Message.create({
+    var newMessage = models.Message.build({
       body: req.param('Body'),
       aaron: true
-    }).emit('message', message.body)
+    });
+    newMessage.save().emit('message', newMessage.body);
   }
 
 });
