@@ -4,6 +4,7 @@ $(function() {
   $("form#chat-input-form").on("submit", function(e){
     e.preventDefault();
     sendAjax(socket)
+    $("#chat-input").val("");
   });
 
   socket.on('message', function(data){
@@ -29,7 +30,6 @@ var sendAjax = function(socket) {
 
 var addChatToHTML = function(data) {
   if(data.aaron !== undefined) {
-    $("#chat-input").val("");
     var message = document.createTextNode(data.body)
     var classType = data.aaron ? "from-aaron" : "from-user"
     $("#chat-output").prepend(
