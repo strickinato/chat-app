@@ -20,6 +20,8 @@ module.exports = function(io) {
       })
       newMessage.save().then(function(error){
         io.emit('message', newMessage);
+        console.log('Received a message from Aaron!')
+        res.sendStatus(200);
       })
     }
 
@@ -31,9 +33,9 @@ module.exports = function(io) {
         from: TWILIONUM
       }, function(err, message) {
         if(!err) {
-          res.send(200);
+          res.sendStatus(200);
         } else {
-          console.log(err)
+          console.log(err);
         }
       });
     }

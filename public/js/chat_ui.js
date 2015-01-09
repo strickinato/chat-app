@@ -49,7 +49,7 @@ var sendToTwilio = function() {
       to: aaron
     },
     success: function(){
-      console.log('successful ajax')
+      console.log('Aaron will get your message by phone, hopefully he responds!')
     }
   })
 }
