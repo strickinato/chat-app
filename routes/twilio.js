@@ -11,7 +11,9 @@ var client = require('twilio')(accountSid, authToken);
 module.exports = function(io) {
   var routes = {};
 
+
   routes.post = function(req, res) {
+  console.log(req)
     if(req.param('From') == AARON) {
       var newMessage = models.Message.build({
         body: req.param('Body'),
