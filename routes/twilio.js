@@ -13,7 +13,6 @@ module.exports = function(io) {
 
 
   routes.post = function(req, res) {
-  console.log(req)
     if(req.param('From') == AARON) {
       var newMessage = models.Message.build({
         body: req.param('Body'),
@@ -33,8 +32,6 @@ module.exports = function(io) {
       }, function(err, message) {
         console.log(err)
       });
-    }
-
     }
   }
   return routes;
