@@ -43,6 +43,7 @@ var sendToTwilio = function() {
   var aaron = '+14152720970';
   $.ajax({
     url: '/sms',
+    type: "POST",
     data: {
       body: text,
       to: aaron
