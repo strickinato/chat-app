@@ -30,7 +30,11 @@ module.exports = function(io) {
         to: AARON,
         from: TWILIONUM
       }, function(err, message) {
-        console.log(err)
+        if(!err) {
+          res.send(200);
+        } else {
+          console.log(err)
+        }
       });
     }
   }
