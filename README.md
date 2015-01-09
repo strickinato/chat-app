@@ -11,3 +11,4 @@ TODO::
 + Add user nicknames
 + Opening Tour
 + favicon & other basic webpage stuff
++ Refactor
